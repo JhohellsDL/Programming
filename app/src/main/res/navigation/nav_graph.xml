@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.jdlstudios.programming.ui.views.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/priorKnowledgeFragment"
+        android:name="com.jdlstudios.programming.ui.views.PriorKnowledgeFragment"
+        android:label="fragment_prior_knowledge"
+        tools:layout="@layout/fragment_prior_knowledge" />
+</navigation>
