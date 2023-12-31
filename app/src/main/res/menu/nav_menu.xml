@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/button_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/home_24px"
+        android:title="Home" />
+    <item
+        android:id="@+id/button_knowledge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/local_library_24px"
+        android:title="Teory"/>
+    <item
+        android:id="@+id/button_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/exercise_24px"
+        android:title="Practice"/>
+    <item
+        android:id="@+id/button_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/person_24px"
+        android:title="User"/>
+</menu>
