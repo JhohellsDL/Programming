@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/local_library_24px"
-        android:title="@string/teory_title"/>
+        android:title="@string/knowledge_title"/>
     <item
         android:id="@+id/button_exercises"
         android:layout_width="wrap_content"
