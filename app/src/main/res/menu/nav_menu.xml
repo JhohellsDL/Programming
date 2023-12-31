@@ -6,23 +6,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/home_24px"
-        android:title="Home" />
+        android:title="@string/home_title" />
     <item
         android:id="@+id/button_knowledge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/local_library_24px"
-        android:title="Teory"/>
+        android:title="@string/teory_title"/>
     <item
-        android:id="@+id/button_other"
+        android:id="@+id/button_exercises"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/exercise_24px"
-        android:title="Practice"/>
+        android:title="@string/exercises_title"/>
     <item
         android:id="@+id/button_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/person_24px"
-        android:title="User"/>
+        android:title="@string/user_title"/>
+
 </menu>
