@@ -10,7 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.jdlstudios.programming.R
+import com.jdlstudios.programming.data.DataSourceThemes.themeList
 import com.jdlstudios.programming.databinding.FragmentPriorKnowledgeBinding
+import com.jdlstudios.programming.ui.adapter.ThemesAdapter
 import com.jdlstudios.programming.ui.viewmodels.PriorKnowledgeViewModel
 
 class PriorKnowledgeFragment : Fragment() {
@@ -22,6 +24,13 @@ class PriorKnowledgeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentPriorKnowledgeBinding.inflate(inflater)
+
+        val adapterTheme = ThemesAdapter(
+            onClickListener = { Log.d("asdasd", "lista: asasdasd holder") }
+        )
+        adapterTheme.submitList(themeList)
+        binding.recyclerViewThemes.adapter = adapterTheme
+
         Log.d("asdasd", "lista: as")
         // Observar los cambios en currentListThemes
         priorKnowledgeViewModel.currentListThemes.observe(viewLifecycleOwner) {
