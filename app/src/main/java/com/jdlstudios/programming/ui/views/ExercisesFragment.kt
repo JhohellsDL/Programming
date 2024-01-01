@@ -7,13 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.viewModels
 import com.jdlstudios.programming.R
+import com.jdlstudios.programming.data.DataSourceThemes
 import com.jdlstudios.programming.databinding.FragmentExercisesBinding
+import com.jdlstudios.programming.ui.adapter.ExerciseAdapter
+import com.jdlstudios.programming.ui.viewmodels.ExercisesViewModel
 import com.jdlstudios.programming.util.ID_THEME
 
 class ExercisesFragment : Fragment() {
 
     private lateinit var binding: FragmentExercisesBinding
+    private val exercisesViewModel: ExercisesViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,6 +31,21 @@ class ExercisesFragment : Fragment() {
             val originCode = bundle.getInt(ID_THEME, 0)
             Log.i("asdasd", "recibidio: $originCode")
 
+        }
+
+        val adapterExercises = ExerciseAdapter(
+            onClickListener = {
+                Log.d("asdasd", "lista: asasdasd holder")
+
+            }
+        )
+
+        exercisesViewModel.setListExercises(DataSourceThemes.exerciseList)
+        binding.recyclerViewExercises.adapter = adapterExercises
+
+        exercisesViewModel.currentListExercises.observe(viewLifecycleOwner) {
+            Log.d("asdasd", "lista: $it")
+            adapterExercises.submitList(it)
         }
 
         return binding.root

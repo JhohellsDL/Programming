@@ -12,12 +12,13 @@ import com.jdlstudios.programming.data.DataSourceThemes
 import com.jdlstudios.programming.databinding.FragmentThemesBinding
 import com.jdlstudios.programming.ui.adapter.ThemesAdapter
 import com.jdlstudios.programming.ui.viewmodels.PriorKnowledgeViewModel
+import com.jdlstudios.programming.ui.viewmodels.ThemesViewModel
 
 class ThemesFragment : Fragment() {
 
     private lateinit var binding: FragmentThemesBinding
 
-    private val themesViewModel: PriorKnowledgeViewModel by viewModels()
+    private val themesViewModel: ThemesViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

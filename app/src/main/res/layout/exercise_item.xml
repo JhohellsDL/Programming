@@ -6,20 +6,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/title_theme"
+        android:id="@+id/title_exercise"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Title exercise"
+        android:text="Titulo del tema"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/description_theme"
+        android:id="@+id/description_exercise"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Description exercise"
+        android:text="Descripcion del tema"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_theme"/>
+        app:layout_constraintTop_toBottomOf="@id/title_exercise"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
