@@ -36,7 +36,10 @@ class ExercisesFragment : Fragment() {
         val adapterExercises = ExerciseAdapter(
             onClickListener = {
                 Log.d("asdasd", "lista: asasdasd holder")
-
+                ExerciseDetailFragment.start(
+                    requireActivity().supportFragmentManager,
+                    4
+                )
             }
         )
 
