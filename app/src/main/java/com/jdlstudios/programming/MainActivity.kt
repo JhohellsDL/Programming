@@ -7,6 +7,7 @@ import com.jdlstudios.programming.databinding.ActivityMainBinding
 import com.jdlstudios.programming.ui.views.ExercisesFragment
 import com.jdlstudios.programming.ui.views.HomeFragment
 import com.jdlstudios.programming.ui.views.PriorKnowledgeFragment
+import com.jdlstudios.programming.ui.views.ThemesFragment
 import com.jdlstudios.programming.ui.views.UserFragment
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.button_home -> makeCurrentFragment(HomeFragment())
                 R.id.button_knowledge -> makeCurrentFragment(PriorKnowledgeFragment())
-                R.id.button_exercises -> makeCurrentFragment(ExercisesFragment())
+                R.id.button_exercises -> makeCurrentFragment(ThemesFragment())
                 R.id.button_user -> makeCurrentFragment(UserFragment())
             }
             true

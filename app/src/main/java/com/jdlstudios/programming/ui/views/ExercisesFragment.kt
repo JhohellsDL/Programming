@@ -1,12 +1,15 @@
 package com.jdlstudios.programming.ui.views
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import com.jdlstudios.programming.R
 import com.jdlstudios.programming.databinding.FragmentExercisesBinding
+import com.jdlstudios.programming.util.ID_THEME
 
 class ExercisesFragment : Fragment() {
 
@@ -17,8 +20,40 @@ class ExercisesFragment : Fragment() {
     ): View {
         binding = FragmentExercisesBinding.inflate(inflater)
 
+        val bundle = arguments
+        if (bundle != null) {
+            val originCode = bundle.getInt(ID_THEME, 0)
+            Log.i("asdasd", "recibidio: $originCode")
 
+        }
 
         return binding.root
     }
+
+    companion object {
+        fun start(
+            fragmentManager: FragmentManager,
+            idTheme: Int
+        ) {
+            val fragment = ExercisesFragment().apply {
+                arguments = Bundle().apply {
+                    putInt(ID_THEME, idTheme)
+                }
+            }
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.nav_host_fragment, fragment)
+                addToBackStack(null)
+                commit()
+            }
+        }
+    }
+
+    fun makeCurrentFragment(fragment: Fragment) {
+        requireActivity().supportFragmentManager.beginTransaction().apply {
+            replace(R.id.nav_host_fragment, fragment)
+            addToBackStack(null)
+            commit()
+        }
+    }
+
 }

@@ -15,4 +15,28 @@
         android:name="com.jdlstudios.programming.ui.views.PriorKnowledgeFragment"
         android:label="fragment_prior_knowledge"
         tools:layout="@layout/fragment_prior_knowledge" />
+    <fragment
+        android:id="@+id/themesFragment"
+        android:name="com.jdlstudios.programming.ui.views.ThemesFragment"
+        android:label="fragment_themes"
+        tools:layout="@layout/fragment_themes" />
+    <fragment
+        android:id="@+id/exercisesFragment"
+        android:name="com.jdlstudios.programming.ui.views.ExercisesFragment"
+        android:label="fragment_exercises"
+        tools:layout="@layout/fragment_exercises" >
+        <argument
+            android:name="idTheme"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.jdlstudios.programming.ui.views.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/exerciseDetailFragment"
+        android:name="com.jdlstudios.programming.ui.views.ExerciseDetailFragment"
+        android:label="fragment_exercise_detail"
+        tools:layout="@layout/fragment_exercise_detail" />
 </navigation>
