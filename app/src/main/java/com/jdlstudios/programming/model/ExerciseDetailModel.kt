@@ -1,8 +1,32 @@
 package com.jdlstudios.programming.model
 
-data class ExerciseDetailModel (
+import com.jdlstudios.programming.util.MAX_CHARACTERS
+
+data class ExerciseDetailModel(
     val id: Int,
     val title: String,
     val description: String,
+    val difficulty: String,
+    val date: String,
+    val time: String,
+    val timeUser: String,
     val complete: Boolean
-)
+) {
+    companion object {
+        fun ExerciseDetailModel.mapToDetailFromExercise() : ExerciseModel {
+            return ExerciseModel(
+                id = id,
+                title = title,
+                description = shorterDescription()
+            )
+        }
+    }
+    fun shorterDescription(): String {
+        return if (description.length > MAX_CHARACTERS) {
+            "${description.substring(0, MAX_CHARACTERS - 3)}..."
+        } else {
+            description
+        }
+    }
+
+}

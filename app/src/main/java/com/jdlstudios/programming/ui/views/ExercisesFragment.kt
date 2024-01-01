@@ -1,16 +1,17 @@
 package com.jdlstudios.programming.ui.views
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import com.jdlstudios.programming.R
+import com.jdlstudios.programming.data.DataSourceExercisesDetail
 import com.jdlstudios.programming.data.DataSourceThemes
 import com.jdlstudios.programming.databinding.FragmentExercisesBinding
+import com.jdlstudios.programming.model.ThemeModel
 import com.jdlstudios.programming.ui.adapter.ExerciseAdapter
 import com.jdlstudios.programming.ui.viewmodels.ExercisesViewModel
 import com.jdlstudios.programming.util.ID_THEME
@@ -19,6 +20,8 @@ class ExercisesFragment : Fragment() {
 
     private lateinit var binding: FragmentExercisesBinding
     private val exercisesViewModel: ExercisesViewModel by viewModels()
+    private var themeModel: ThemeModel? = null
+    private var idTheme: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,32 +29,42 @@ class ExercisesFragment : Fragment() {
     ): View {
         binding = FragmentExercisesBinding.inflate(inflater)
 
-        val bundle = arguments
-        if (bundle != null) {
-            val originCode = bundle.getInt(ID_THEME, 0)
-            Log.i("asdasd", "recibidio: $originCode")
-
+        arguments?.let {
+            idTheme = it.getInt(ID_THEME, 0)
+            getTheme(idTheme)
         }
 
         val adapterExercises = ExerciseAdapter(
             onClickListener = {
-                Log.d("asdasd", "lista: asasdasd holder")
                 ExerciseDetailFragment.start(
                     requireActivity().supportFragmentManager,
-                    4
+                    idExercise = it.id,
+                    idTheme = idTheme
                 )
             }
         )
 
-        exercisesViewModel.setListExercises(DataSourceThemes.exerciseList)
+        binding.titleLabel.text = "Exercises - ${themeModel?.title}"
+
+        themeModel?.let {
+            DataSourceExercisesDetail.getListExercisesSummary(it.id)
+        }?.let {
+            exercisesViewModel.setListExercises(it)
+        }
+
         binding.recyclerViewExercises.adapter = adapterExercises
 
         exercisesViewModel.currentListExercises.observe(viewLifecycleOwner) {
-            Log.d("asdasd", "lista: $it")
             adapterExercises.submitList(it)
         }
 
         return binding.root
+    }
+
+    private fun getTheme(id: Int) {
+        DataSourceThemes.getThemeById(id)?.let {
+            themeModel = it
+        }
     }
 
     companion object {

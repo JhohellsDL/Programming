@@ -1,10 +1,11 @@
 package com.jdlstudios.programming
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.jdlstudios.programming.databinding.ActivityMainBinding
-import com.jdlstudios.programming.ui.views.ExercisesFragment
 import com.jdlstudios.programming.ui.views.HomeFragment
 import com.jdlstudios.programming.ui.views.PriorKnowledgeFragment
 import com.jdlstudios.programming.ui.views.ThemesFragment
@@ -17,6 +18,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(window.decorView) { _, insets ->
+            insets.isVisible(WindowInsetsCompat.Type.ime())
+            insets
+        }
 
         binding.buttonNavigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
