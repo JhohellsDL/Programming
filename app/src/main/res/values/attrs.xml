@@ -1,0 +1,6 @@
+<!-- res/values/attrs.xml -->
+<resources>
+    <declare-styleable name="CustomCardDifficult">
+        <attr name="theme_text" format="string" />
+    </declare-styleable>
+</resources>

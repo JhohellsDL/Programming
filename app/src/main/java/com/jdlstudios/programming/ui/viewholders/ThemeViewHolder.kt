@@ -13,7 +13,6 @@ class ThemeViewHolder private constructor(private val binding: ThemeItemBinding)
         onClickListener: (ThemeModel) -> Unit
     ) {
         binding.titleTheme.text = item.title
-        binding.descriptionTheme.text = item.description
 
         itemView.setOnClickListener { onClickListener(item) }
     }
