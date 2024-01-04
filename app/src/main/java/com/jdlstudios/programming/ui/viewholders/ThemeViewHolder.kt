@@ -22,7 +22,7 @@ class ThemeViewHolder private constructor(private val binding: ThemeItemBinding)
         onClickListener: (ThemeModel) -> Unit
     ) {
         binding.titleTheme.text = item.title
-        binding.timeEstimatedTheme.text = item.timeEstimated
+        binding.timeEstimatedTheme.text = binding.root.context.getString(R.string.time_estimated, item.timeEstimated)
         binding.descriptionTheme.text = item.shortDescription
         binding.textDifficultTheme.text = Difficult.getDifficultName(item.difficult)
         binding.radioButtonTheme.isChecked = item.complete

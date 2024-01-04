@@ -5,4 +5,5 @@
     <string name="knowledge_title">Knowledge</string>
     <string name="exercises_title">Exercises</string>
     <string name="user_title">User</string>
+    <string name="time_estimated">Tiempo estimado: %1$s</string>
 </resources>
