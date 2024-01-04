@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="subtitle">#898989</color>
+    <color name="color_gray_light">#ECECEC</color>
     <color name="system_purple_dark">#130037</color>
     <color name="system_purple">#6C529B</color>
     <color name="system_purple_light">#9173C8</color>

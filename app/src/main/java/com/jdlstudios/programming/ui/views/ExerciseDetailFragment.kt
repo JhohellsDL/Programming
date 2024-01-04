@@ -10,6 +10,7 @@ import com.jdlstudios.programming.R
 import com.jdlstudios.programming.data.DataSourceExercisesDetail
 import com.jdlstudios.programming.databinding.FragmentExerciseDetailBinding
 import com.jdlstudios.programming.model.ExerciseDetailModel
+import com.jdlstudios.programming.util.Difficult
 import com.jdlstudios.programming.util.ID_EXERCISE
 import com.jdlstudios.programming.util.ID_THEME
 
@@ -47,7 +48,7 @@ class ExerciseDetailFragment : Fragment() {
             binding.titleExercise.text = it.title
             binding.descriptionExercise.text = it.description
             binding.textDate.text = it.date
-            binding.textDifficult.text = it.difficulty
+            binding.textDifficult.text = Difficult.getDifficultName(it.difficulty)
             binding.textTimeEstimated.text = it.time
             binding.textTimeUser.text = it.timeUser
         }
