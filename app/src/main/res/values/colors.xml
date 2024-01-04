@@ -3,6 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="system_purple">#6C529B</color>
-    <color name="green_difficult">#CAECBC</color>
-    <color name="green_difficult_stroke">#568D42</color>
+    <color name="color_difficult_easy">#D2F1C5</color>
+    <color name="color_difficult_middle">#FDF5A9</color>
+    <color name="color_difficult_hard">#FFC4C4</color>
+    <color name="color_difficult_expert">#E9C9FA</color>
+    <color name="color_difficult_easy_stroke">#568D42</color>
+    <color name="color_difficult_middle_stroke">#E5A23F</color>
+    <color name="color_difficult_hard_stroke">#E5400C</color>
+    <color name="color_difficult_expert_stroke">#673AB7</color>
 </resources>
