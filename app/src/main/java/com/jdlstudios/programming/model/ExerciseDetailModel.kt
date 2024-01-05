@@ -20,7 +20,7 @@ data class ExerciseDetailModel(
                 description = shorterDescription(),
                 difficult = difficulty,
                 complete = complete,
-                time = time
+                time = timeUser
             )
         }
     }

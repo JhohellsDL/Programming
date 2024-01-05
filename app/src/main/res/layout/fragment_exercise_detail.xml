@@ -10,10 +10,11 @@
         android:id="@+id/constraint_view_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="100dp"
         android:layout_marginStart="32dp"
-        android:elevation="4dp"
-        android:background="@drawable/round_corner_background">
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/color_difficult_expert"
+        android:background="@drawable/round_corner_background"
+        android:elevation="12dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint_exercise"
@@ -37,21 +38,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                tools:text="Numero aleatorio"
-                android:textSize="24sp"
+                android:fontFamily="@font/montserrat_light"
+                android:textSize="28sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image_exercise" />
+                app:layout_constraintTop_toBottomOf="@id/image_exercise"
+                tools:text="Operación Matemática con Potencia" />
 
             <TextView
                 android:id="@+id/description_exercise"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                tools:text="Escribe un programa que genere un número aleatorio y pida al usuario adivinarlo."
-                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_light"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/title_exercise" />
+                app:layout_constraintTop_toBottomOf="@id/title_exercise"
+                tools:text="Escribe un programa que genere un número aleatorio y pida al usuario adivinarlo." />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -60,6 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/constraint_exercise">
 
@@ -89,46 +93,99 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="56dp"
             app:layout_constraintTop_toBottomOf="@id/constraint_progress">
 
             <TextView
-                android:id="@+id/text_date"
+                android:id="@+id/text_time_estimated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_light"
+                android:textSize="36sp"
+                app:layout_constraintStart_toStartOf="@id/label_time_estimated"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="10 min" />
+
+            <TextView
+                android:id="@+id/label_time_estimated"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                tools:text="Wednesday 15"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Tiempo estimado:"
+                android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/text_time_estimated" />
 
             <androidx.cardview.widget.CardView
-                android:layout_width="64dp"
-                android:layout_height="36dp"
+                android:id="@+id/card_difficult_exercise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:layout_marginStart="8dp"
                 android:elevation="8dp"
-                android:outlineAmbientShadowColor="@color/black"
-                android:outlineSpotShadowColor="@color/black"
-                android:translationZ="4dp"
-                app:cardCornerRadius="12dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_date"
-                app:strokeWidth="0dp">
+                android:padding="8dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/card_theme"
+                app:layout_constraintStart_toEndOf="@id/card_theme"
+                app:layout_constraintTop_toTopOf="@id/card_theme">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="8dp">
+                    android:background="@color/background_purple_super_light"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp">
 
                     <TextView
                         android:id="@+id/text_difficult"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="Easy"
+                        android:fontFamily="@font/montserrat_light"
+                        android:text="Easy"
+                        android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_theme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="8dp"
+                android:padding="8dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_time_estimated">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background_purple_super_light"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp">
+
+                    <TextView
+                        android:id="@+id/text_theme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_light"
+                        android:text="Conceptos basicos"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -141,21 +198,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <TextView
-                android:id="@+id/label_time_estimated"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tiempo estimado:"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/text_time_estimated"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="10:00"
-                app:layout_constraintStart_toStartOf="@id/label_time_estimated"
-                app:layout_constraintTop_toBottomOf="@id/label_time_estimated" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -193,11 +235,12 @@
                     android:id="@+id/text_time_user"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="09:45"
+                    android:fontFamily="@font/montserrat_light"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="09:45" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>

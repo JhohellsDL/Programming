@@ -27,6 +27,7 @@ class ExerciseViewHolder private constructor(private val binding: ExerciseItemBi
         binding.descriptionExercise.text = item.description
         binding.textDifficultExercise.text = Difficult.getDifficultName(item.difficult)
         binding.checkboxExercise.isChecked = item.complete
+        binding.textTimeEstimated.text = item.time
 
         applyColorCardChips(item)
 
