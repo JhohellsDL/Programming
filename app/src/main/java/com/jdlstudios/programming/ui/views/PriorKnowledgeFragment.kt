@@ -16,17 +16,22 @@ import com.jdlstudios.programming.databinding.FragmentPriorKnowledgeBinding
 
 class PriorKnowledgeFragment : Fragment() {
     private lateinit var binding: FragmentPriorKnowledgeBinding
+    private var id: Int = 0
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentPriorKnowledgeBinding.inflate(inflater)
+        activeButtonProcedure()
 
         binding.layoutButtonProcedure.setOnClickListener {
             restartButtonThemes()
             restartButtonSymbols()
             restartButtonOther()
             activeButtonProcedure()
+
+            fillFieldsContent()
         }
 
         binding.layoutButtonThemes.setOnClickListener {
@@ -34,6 +39,8 @@ class PriorKnowledgeFragment : Fragment() {
             restartButtonSymbols()
             restartButtonOther()
             activeButtonThemes()
+
+            fillFieldsContent2()
         }
 
         binding.layoutButtonSymbols.setOnClickListener {
@@ -41,6 +48,8 @@ class PriorKnowledgeFragment : Fragment() {
             restartButtonThemes()
             restartButtonOther()
             activeButtonSymbols()
+
+            fillFieldsContent3()
         }
         binding.layoutButtonOther.setOnClickListener {
             restartButtonProcedures()
@@ -52,6 +61,28 @@ class PriorKnowledgeFragment : Fragment() {
         return binding.root
     }
 
+    private fun fillFieldsContent() {
+        binding.titleContentKnowledge.text = "Elaborar un algoritmo"
+        binding.descriptionContentKnowledge.text =
+            "Elaborar un algoritmo para resolver un problema es un proceso que implica varios pasos.\n\nRecuerda que la resolución de problemas es una habilidad que se mejora con la práctica. Cuanto más te enfrentes a problemas y diseñes algoritmos para resolverlos, mejor te volverás en este proceso."
+        binding.imageContentKnowledgeBig.setImageResource(R.drawable.algoritmo)
+    }
+
+    private fun fillFieldsContent2() {
+        binding.titleContentKnowledge.text = "Temario genaral para aprender a programar"
+        binding.descriptionContentKnowledge.text =
+            "Aquí tienes un temario general para aprender a programar en Kotlin. Ten en cuenta que este temario está estructurado de manera progresiva, pero puedes adaptarlo según tus preferencias y necesidades."
+        binding.imageContentKnowledgeBig.setImageResource(R.drawable.temas_importantes)
+    }
+
+    private fun fillFieldsContent3() {
+        binding.titleContentKnowledge.text = "Temario genaral para aprender a programar"
+        binding.descriptionContentKnowledge.text =
+            "Aquí tienes un temario general para aprender a programar en Kotlin. Ten en cuenta que este temario está estructurado de manera progresiva, pero puedes adaptarlo según tus preferencias y necesidades."
+        binding.imageContentKnowledgeBig.setImageResource(R.drawable.diagram_flow)
+    }
+
+
     private fun activeButtonOther() {
         val backgroundColor = binding.root.context.getColorCompat(R.color.color_difficult_easy)
         binding.layoutButtonOther.setBackgroundColorTintCompat(backgroundColor)
@@ -61,6 +92,7 @@ class PriorKnowledgeFragment : Fragment() {
         binding.viewAuxSymbols2.setBackgroundColorCompat(backgroundColor)
         binding.viewAuxBottom.setBackgroundColorCompat(backgroundColor)
     }
+
     private fun restartButtonOther() {
         val lightColor = binding.root.context.getColorCompat(R.color.background_purple_super_light)
         binding.layoutButtonOther.setBackgroundColorTintCompat(lightColor)
@@ -70,6 +102,7 @@ class PriorKnowledgeFragment : Fragment() {
         binding.viewAuxSymbols2.setBackgroundColorCompat(lightColor)
         binding.viewAuxBottom.setBackgroundColorCompat(lightColor)
     }
+
     private fun activeButtonSymbols() {
         val backgroundColor = binding.root.context.getColorCompat(R.color.color_difficult_easy)
         binding.layoutButtonSymbols.setBackgroundColorTintCompat(backgroundColor)
@@ -129,6 +162,7 @@ class PriorKnowledgeFragment : Fragment() {
 
         binding.viewAuxTop.setBackgroundColorCompat(backgroundColor)
         binding.viewAuxThemes1.setBackgroundColorCompat(backgroundColor)
+
     }
 
     private fun Context.getColorCompat(@ColorRes colorResId: Int): Int {
