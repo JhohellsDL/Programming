@@ -26,65 +26,87 @@ class PriorKnowledgeFragment : Fragment() {
         activeButtonProcedure()
 
         binding.layoutButtonProcedure.setOnClickListener {
-            restartButtonThemes()
-            restartButtonSymbols()
-            restartButtonOther()
-            activeButtonProcedure()
-
-            fillFieldsContent()
+            showButtonProcedure()
+            fillFieldsContent(0)
         }
 
         binding.layoutButtonThemes.setOnClickListener {
-            restartButtonProcedures()
-            restartButtonSymbols()
-            restartButtonOther()
-            activeButtonThemes()
-
-            fillFieldsContent2()
+            showButtonThemes()
+            fillFieldsContent(1)
         }
 
         binding.layoutButtonSymbols.setOnClickListener {
-            restartButtonProcedures()
-            restartButtonThemes()
-            restartButtonOther()
-            activeButtonSymbols()
-
-            fillFieldsContent3()
+            showButtonSymbols()
+            fillFieldsContent(2)
         }
         binding.layoutButtonOther.setOnClickListener {
-            restartButtonProcedures()
-            restartButtonThemes()
-            restartButtonSymbols()
-            activeButtonOther()
+            showButtonOthers()
+            fillFieldsContent(3)
         }
 
         return binding.root
     }
 
-    private fun fillFieldsContent() {
-        binding.titleContentKnowledge.text = "Elaborar un algoritmo"
-        binding.descriptionContentKnowledge.text =
-            "Elaborar un algoritmo para resolver un problema es un proceso que implica varios pasos.\n\nRecuerda que la resolución de problemas es una habilidad que se mejora con la práctica. Cuanto más te enfrentes a problemas y diseñes algoritmos para resolverlos, mejor te volverás en este proceso."
-        binding.imageContentKnowledgeBig.setImageResource(R.drawable.algoritmo)
+    private fun showButtonOthers() {
+        restartButtonProcedures()
+        restartButtonThemes()
+        restartButtonSymbols()
+        activeButtonOther()
     }
 
-    private fun fillFieldsContent2() {
-        binding.titleContentKnowledge.text = "Temario genaral para aprender a programar"
-        binding.descriptionContentKnowledge.text =
-            "Aquí tienes un temario general para aprender a programar en Kotlin. Ten en cuenta que este temario está estructurado de manera progresiva, pero puedes adaptarlo según tus preferencias y necesidades."
-        binding.imageContentKnowledgeBig.setImageResource(R.drawable.temas_importantes)
+    private fun showButtonSymbols() {
+        restartButtonProcedures()
+        restartButtonThemes()
+        restartButtonOther()
+        activeButtonSymbols()
     }
 
-    private fun fillFieldsContent3() {
-        binding.titleContentKnowledge.text = "Temario genaral para aprender a programar"
-        binding.descriptionContentKnowledge.text =
-            "Aquí tienes un temario general para aprender a programar en Kotlin. Ten en cuenta que este temario está estructurado de manera progresiva, pero puedes adaptarlo según tus preferencias y necesidades."
-        binding.imageContentKnowledgeBig.setImageResource(R.drawable.diagram_flow)
+    private fun showButtonThemes() {
+        restartButtonProcedures()
+        restartButtonSymbols()
+        restartButtonOther()
+        activeButtonThemes()
     }
 
+    private fun showButtonProcedure() {
+        restartButtonThemes()
+        restartButtonSymbols()
+        restartButtonOther()
+        activeButtonProcedure()
+    }
+
+    private fun fillFieldsContent(id: Int) {
+
+        when(id) {
+            0 ->  {
+                binding.titleContentKnowledge.text = "Elaborar un algoritmo"
+                binding.descriptionContentKnowledge.text =
+                    "Elaborar un algoritmo para resolver un problema es un proceso que implica varios pasos.\n\nRecuerda que la resolución de problemas es una habilidad que se mejora con la práctica. Cuanto más te enfrentes a problemas y diseñes algoritmos para resolverlos, mejor te volverás en este proceso."
+                binding.imageContentKnowledgeBig.setImageResource(R.drawable.algoritmo)
+            }
+            1 -> {
+                binding.titleContentKnowledge.text = "Temario genaral para aprender a programar"
+                binding.descriptionContentKnowledge.text =
+                    "Aquí tienes un temario general para aprender a programar en Kotlin. Ten en cuenta que este temario está estructurado de manera progresiva, pero puedes adaptarlo según tus preferencias y necesidades."
+                binding.imageContentKnowledgeBig.setImageResource(R.drawable.temas_importantes)
+            }
+            2 -> {
+                binding.titleContentKnowledge.text = "Diagrama de flujo "
+                binding.descriptionContentKnowledge.text =
+                    "Aquí tienes un temario general para aprender a programar en Kotlin. Ten en cuenta que este temario está estructurado de manera progresiva, pero puedes adaptarlo según tus preferencias y necesidades."
+                binding.imageContentKnowledgeBig.setImageResource(R.drawable.diagram_flow)
+            }
+            3 -> {
+                binding.titleContentKnowledge.text = "Temario genaral para aprender a programar"
+                binding.descriptionContentKnowledge.text =
+                    "Aquí tienes un temario general para aprender a programar en Kotlin. Ten en cuenta que este temario está estructurado de manera progresiva, pero puedes adaptarlo según tus preferencias y necesidades."
+                binding.imageContentKnowledgeBig.setImageResource(R.drawable.diagram_flow)
+            }
+        }
+    }
 
     private fun activeButtonOther() {
-        val backgroundColor = binding.root.context.getColorCompat(R.color.color_difficult_easy)
+        val backgroundColor = binding.root.context.getColorCompat(R.color.background_purple_super_light)
         binding.layoutButtonOther.setBackgroundColorTintCompat(backgroundColor)
         binding.viewAuxOther1.setBackgroundColorCompat(backgroundColor)
         binding.viewAuxOther2.setBackgroundColorCompat(backgroundColor)
@@ -94,7 +116,7 @@ class PriorKnowledgeFragment : Fragment() {
     }
 
     private fun restartButtonOther() {
-        val lightColor = binding.root.context.getColorCompat(R.color.background_purple_super_light)
+        val lightColor = binding.root.context.getColorCompat(R.color.system_purple_light_2)
         binding.layoutButtonOther.setBackgroundColorTintCompat(lightColor)
         binding.viewAuxOther1.setBackgroundColorCompat(lightColor)
         binding.viewAuxOther2.setBackgroundColorCompat(lightColor)
@@ -104,7 +126,7 @@ class PriorKnowledgeFragment : Fragment() {
     }
 
     private fun activeButtonSymbols() {
-        val backgroundColor = binding.root.context.getColorCompat(R.color.color_difficult_easy)
+        val backgroundColor = binding.root.context.getColorCompat(R.color.background_purple_super_light)
         binding.layoutButtonSymbols.setBackgroundColorTintCompat(backgroundColor)
         binding.viewAuxSymbols1.setBackgroundColorCompat(backgroundColor)
         binding.viewAuxSymbols2.setBackgroundColorCompat(backgroundColor)
@@ -114,7 +136,7 @@ class PriorKnowledgeFragment : Fragment() {
     }
 
     private fun restartButtonSymbols() {
-        val lightColor = binding.root.context.getColorCompat(R.color.background_purple_super_light)
+        val lightColor = binding.root.context.getColorCompat(R.color.system_purple_light_2)
         binding.layoutButtonSymbols.setBackgroundColorTintCompat(lightColor)
         binding.viewAuxSymbols1.setBackgroundColorCompat(lightColor)
         binding.viewAuxSymbols2.setBackgroundColorCompat(lightColor)
@@ -125,7 +147,7 @@ class PriorKnowledgeFragment : Fragment() {
     }
 
     private fun restartButtonProcedures() {
-        val lightColor = binding.root.context.getColorCompat(R.color.background_purple_super_light)
+        val lightColor = binding.root.context.getColorCompat(R.color.system_purple_light_2)
         binding.layoutButtonProcedure.setBackgroundColorTintCompat(lightColor)
         binding.viewAuxProcedure1.setBackgroundColorCompat(lightColor)
         binding.viewAuxProcedure2.setBackgroundColorCompat(lightColor)
@@ -135,7 +157,7 @@ class PriorKnowledgeFragment : Fragment() {
     }
 
     private fun restartButtonThemes() {
-        val lightColor = binding.root.context.getColorCompat(R.color.background_purple_super_light)
+        val lightColor = binding.root.context.getColorCompat(R.color.system_purple_light_2)
         binding.layoutButtonThemes.setBackgroundColorTintCompat(lightColor)
         binding.viewAuxThemes1.setBackgroundColorCompat(lightColor)
         binding.viewAuxThemes2.setBackgroundColorCompat(lightColor)
@@ -145,7 +167,7 @@ class PriorKnowledgeFragment : Fragment() {
     }
 
     private fun activeButtonThemes() {
-        val backgroundColor = binding.root.context.getColorCompat(R.color.color_difficult_easy)
+        val backgroundColor = binding.root.context.getColorCompat(R.color.background_purple_super_light)
         binding.layoutButtonThemes.setBackgroundColorTintCompat(backgroundColor)
         binding.viewAuxThemes1.setBackgroundColorCompat(backgroundColor)
         binding.viewAuxThemes2.setBackgroundColorCompat(backgroundColor)
@@ -155,7 +177,7 @@ class PriorKnowledgeFragment : Fragment() {
     }
 
     private fun activeButtonProcedure() {
-        val backgroundColor = binding.root.context.getColorCompat(R.color.color_difficult_easy)
+        val backgroundColor = binding.root.context.getColorCompat(R.color.background_purple_super_light)
         binding.layoutButtonProcedure.setBackgroundColorTintCompat(backgroundColor)
         binding.viewAuxProcedure1.setBackgroundColorCompat(backgroundColor)
         binding.viewAuxProcedure2.setBackgroundColorCompat(backgroundColor)

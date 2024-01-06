@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_difficult_easy"
     tools:context=".ui.views.PriorKnowledgeFragment">
 
     <androidx.core.widget.NestedScrollView
@@ -90,6 +89,7 @@
                 android:layout_marginTop="48dp"
                 android:layout_marginBottom="48dp"
                 android:background="@drawable/round_corner_right_background"
+                android:backgroundTint="@color/system_purple_light_2"
                 android:elevation="-8dp"
                 android:paddingStart="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -100,7 +100,7 @@
                     android:id="@+id/view_aux_top"
                     android:layout_width="32dp"
                     android:layout_height="28dp"
-                    android:background="@color/background_purple_super_light"
+                    android:background="@color/system_purple_light_2"
                     app:layout_constraintBottom_toBottomOf="@id/view_top"
                     app:layout_constraintEnd_toEndOf="parent" />
 
@@ -109,6 +109,7 @@
                     android:layout_width="100dp"
                     android:layout_height="60dp"
                     android:background="@drawable/round_corner_all_background"
+                    android:backgroundTint="@color/system_purple_light_2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -117,7 +118,7 @@
                     android:id="@+id/view_aux_procedure_1"
                     android:layout_width="32dp"
                     android:layout_height="60dp"
-                    android:background="@color/background_purple_super_light"
+                    android:background="@color/system_purple_light_2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/layout_button_procedure" />
 
@@ -125,7 +126,7 @@
                     android:id="@+id/view_aux_procedure_2"
                     android:layout_width="32dp"
                     android:layout_height="60dp"
-                    android:background="@color/background_purple_super_light"
+                    android:background="@color/system_purple_light_2"
                     app:layout_constraintBottom_toBottomOf="@id/layout_button_procedure"
                     app:layout_constraintEnd_toEndOf="parent" />
 
@@ -134,7 +135,7 @@
                     android:layout_width="100dp"
                     android:layout_height="120dp"
                     android:background="@drawable/round_corner_all_background"
-                    android:backgroundTint="@color/background_purple_super_light"
+                    android:backgroundTint="@color/system_purple_light_2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/view_top">
 
@@ -168,7 +169,7 @@
                     android:id="@+id/view_aux_themes_1"
                     android:layout_width="32dp"
                     android:layout_height="60dp"
-                    android:background="@color/background_purple_super_light"
+                    android:background="@color/system_purple_light_2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/layout_button_themes" />
 
@@ -176,7 +177,7 @@
                     android:id="@+id/view_aux_themes_2"
                     android:layout_width="32dp"
                     android:layout_height="60dp"
-                    android:background="@color/background_purple_super_light"
+                    android:background="@color/system_purple_light_2"
                     app:layout_constraintBottom_toBottomOf="@id/layout_button_themes"
                     app:layout_constraintEnd_toEndOf="parent" />
 
@@ -185,7 +186,7 @@
                     android:layout_width="100dp"
                     android:layout_height="120dp"
                     android:background="@drawable/round_corner_all_background"
-                    android:backgroundTint="@color/background_purple_super_light"
+                    android:backgroundTint="@color/system_purple_light_2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/layout_button_procedure">
 
@@ -219,7 +220,7 @@
                     android:id="@+id/view_aux_symbols_1"
                     android:layout_width="32dp"
                     android:layout_height="60dp"
-                    android:background="@color/background_purple_super_light"
+                    android:background="@color/system_purple_light_2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/layout_button_symbols" />
 
@@ -227,7 +228,7 @@
                     android:id="@+id/view_aux_symbols_2"
                     android:layout_width="32dp"
                     android:layout_height="60dp"
-                    android:background="@color/background_purple_super_light"
+                    android:background="@color/system_purple_light_2"
                     app:layout_constraintBottom_toBottomOf="@id/layout_button_symbols"
                     app:layout_constraintEnd_toEndOf="parent" />
 
@@ -236,7 +237,7 @@
                     android:layout_width="100dp"
                     android:layout_height="120dp"
                     android:background="@drawable/round_corner_all_background"
-                    android:backgroundTint="@color/background_purple_super_light"
+                    android:backgroundTint="@color/system_purple_light_2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/layout_button_themes">
 
@@ -270,7 +271,7 @@
                     android:id="@+id/view_aux_other_1"
                     android:layout_width="32dp"
                     android:layout_height="60dp"
-                    android:background="@color/background_purple_super_light"
+                    android:background="@color/system_purple_light_2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@id/layout_button_other" />
 
@@ -278,7 +279,7 @@
                     android:id="@+id/view_aux_other_2"
                     android:layout_width="32dp"
                     android:layout_height="60dp"
-                    android:background="@color/background_purple_super_light"
+                    android:background="@color/system_purple_light_2"
                     app:layout_constraintBottom_toBottomOf="@id/layout_button_other"
                     app:layout_constraintEnd_toEndOf="parent" />
 
@@ -286,7 +287,7 @@
                     android:id="@+id/view_aux_bottom"
                     android:layout_width="32dp"
                     android:layout_height="28dp"
-                    android:background="@color/background_purple_super_light"
+                    android:background="@color/system_purple_light_2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/layout_button_other" />
 
@@ -295,6 +296,7 @@
                     android:layout_width="100dp"
                     android:layout_height="60dp"
                     android:background="@drawable/round_corner_all_background"
+                    android:backgroundTint="@color/system_purple_light_2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/layout_button_other" />
@@ -304,7 +306,7 @@
                     android:layout_width="100dp"
                     android:layout_height="120dp"
                     android:background="@drawable/round_corner_all_background"
-                    android:backgroundTint="@color/background_purple_super_light"
+                    android:backgroundTint="@color/system_purple_light_2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/layout_button_symbols">
 
