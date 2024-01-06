@@ -1,9 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_difficult_easy"
     tools:context=".ui.views.PriorKnowledgeFragment">
+
+    <TextView
+        android:id="@+id/title_knowledge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prior Knowledge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/round_corner_right_background"
+        android:paddingStart="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_knowledge">
+
+        <View
+            android:id="@+id/view_aux_top"
+            android:layout_width="32dp"
+            android:layout_height="28dp"
+            android:background="@color/background_purple_super_light"
+            app:layout_constraintBottom_toBottomOf="@id/view_top"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/view_top"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:background="@drawable/round_corner_all_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/view_aux_procedure_1"
+            android:layout_width="32dp"
+            android:layout_height="60dp"
+            android:background="@color/background_purple_super_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_button_procedure" />
+
+        <View
+            android:id="@+id/view_aux_procedure_2"
+            android:layout_width="32dp"
+            android:layout_height="60dp"
+            android:background="@color/background_purple_super_light"
+            app:layout_constraintBottom_toBottomOf="@id/layout_button_procedure"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_button_procedure"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:background="@drawable/round_corner_all_background"
+            android:backgroundTint="@color/background_purple_super_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_top">
+
+            <ImageView
+                android:id="@+id/image_procedure"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/algoritmo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat_light"
+                android:gravity="center"
+                android:text="Algoritmo"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_procedure" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_aux_themes_1"
+            android:layout_width="32dp"
+            android:layout_height="60dp"
+            android:background="@color/background_purple_super_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_button_themes" />
+
+        <View
+            android:id="@+id/view_aux_themes_2"
+            android:layout_width="32dp"
+            android:layout_height="60dp"
+            android:background="@color/background_purple_super_light"
+            app:layout_constraintBottom_toBottomOf="@id/layout_button_themes"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_button_themes"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:background="@drawable/round_corner_all_background"
+            android:backgroundTint="@color/background_purple_super_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_button_procedure">
+
+            <ImageView
+                android:id="@+id/image_themes"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/temas_importantes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat_light"
+                android:gravity="center"
+                android:text="Themes"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_themes" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/view_aux_symbols_1"
+            android:layout_width="32dp"
+            android:layout_height="60dp"
+            android:background="@color/background_purple_super_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_button_symbols" />
+
+        <View
+            android:id="@+id/view_aux_symbols_2"
+            android:layout_width="32dp"
+            android:layout_height="60dp"
+            android:background="@color/background_purple_super_light"
+            app:layout_constraintBottom_toBottomOf="@id/layout_button_symbols"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_button_symbols"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:background="@drawable/round_corner_all_background"
+            android:backgroundTint="@color/background_purple_super_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_button_themes">
+
+            <ImageView
+                android:id="@+id/image_symbols"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/diagram_flow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat_light"
+                android:gravity="center"
+                android:text="Symbols"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_symbols" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/view_aux_other_1"
+            android:layout_width="32dp"
+            android:layout_height="60dp"
+            android:background="@color/background_purple_super_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_button_other" />
+
+        <View
+            android:id="@+id/view_aux_other_2"
+            android:layout_width="32dp"
+            android:layout_height="60dp"
+            android:background="@color/background_purple_super_light"
+            app:layout_constraintBottom_toBottomOf="@id/layout_button_other"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/view_aux_bottom"
+            android:layout_width="32dp"
+            android:layout_height="28dp"
+            android:background="@color/background_purple_super_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_button_other" />
+
+        <View
+            android:id="@+id/view_bottom"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:background="@drawable/round_corner_all_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_button_other" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_button_other"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:background="@drawable/round_corner_all_background"
+            android:backgroundTint="@color/background_purple_super_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_button_symbols">
+
+            <ImageView
+                android:id="@+id/image_others"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/others"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat_light"
+                android:gravity="center"
+                android:text="Others"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_others" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
