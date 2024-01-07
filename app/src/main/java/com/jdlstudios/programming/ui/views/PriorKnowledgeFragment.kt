@@ -58,7 +58,9 @@ class PriorKnowledgeFragment : Fragment() {
 
     private fun goToDestinationFragment() {
         when (id) {
-            0 -> {}
+            0 -> {
+                makeCurrentFragment(AlgorithmTheoryFragment())
+            }
             1 -> {
                 makeCurrentFragment(ThemesFragment())
             }
