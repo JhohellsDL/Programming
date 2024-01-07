@@ -13,13 +13,16 @@
 
         <TextView
             android:id="@+id/title_label"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:fontFamily="@font/montserrat_light"
-            android:text="Exercises - Conceptos basicos"
-            android:textSize="18sp"
+            android:gravity="center"
+            android:text="@string/text_title_theory_algorithm"
+            android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@color/system_purple"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,12 +30,24 @@
             android:id="@+id/viewpager_theory_algorithm"
             android:layout_width="0dp"
             android:layout_height="480dp"
+            android:layout_marginTop="32dp"
             android:paddingHorizontal="80dp"
             android:paddingVertical="8dp"
-            android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_label" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress_carousel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:progress="70"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewpager_theory_algorithm"
+            app:trackCornerRadius="3dp"
+            app:trackThickness="6dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
