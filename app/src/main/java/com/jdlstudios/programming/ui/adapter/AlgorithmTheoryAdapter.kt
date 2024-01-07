@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.chip.Chip
 import com.jdlstudios.programming.R
 import com.jdlstudios.programming.model.TheoryAlgorithmModel
 
@@ -17,9 +18,10 @@ class AlgorithmTheoryAdapter(
 
     class AlgorithmTheoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textTitle: TextView = itemView.findViewById(R.id.text_title_content)
-        val textDescription: TextView = itemView.findViewById(R.id.text_title_content)
-        val textTips: TextView = itemView.findViewById(R.id.text_title_content)
+        val textDescription: TextView = itemView.findViewById(R.id.text_description_content)
+        val textTips: TextView = itemView.findViewById(R.id.text_description_tips)
         val imageContent: ImageView = itemView.findViewById(R.id.image_content)
+        val chipText: Chip = itemView.findViewById(R.id.number_order_chip)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlgorithmTheoryViewHolder {
@@ -35,9 +37,10 @@ class AlgorithmTheoryAdapter(
 
     override fun onBindViewHolder(holder: AlgorithmTheoryViewHolder, position: Int) {
         holder.textTitle.text = imageList[position].title
-        holder.textDescription.text = imageList[position].title
-        holder.textTips.text = imageList[position].title
+        holder.textDescription.text = imageList[position].description
+        holder.textTips.text = imageList[position].tips
         holder.imageContent.setImageResource(imageList[position].image)
+        holder.chipText.text = "Step ${imageList[position].index}"
 
         if (position == imageList.size - 1) {
             viewPager2.post(runnable)

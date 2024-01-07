@@ -11,11 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.jdlstudios.programming.R
 import com.jdlstudios.programming.data.DataSourceTheoryAlgoritm
 import com.jdlstudios.programming.databinding.FragmentAlgorithmTheoryBinding
 import com.jdlstudios.programming.model.TheoryAlgorithmModel
 import com.jdlstudios.programming.ui.adapter.AlgorithmTheoryAdapter
+import com.jdlstudios.programming.util.TIME_IN_MILLIS_TRANSITION
 import kotlin.math.abs
 
 class AlgorithmTheoryFragment : Fragment() {
@@ -38,7 +38,7 @@ class AlgorithmTheoryFragment : Fragment() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 handler.removeCallbacks(runnable)
-                handler.postDelayed(runnable, 3000)
+                handler.postDelayed(runnable, TIME_IN_MILLIS_TRANSITION.toLong())
             }
         })
 
@@ -52,7 +52,7 @@ class AlgorithmTheoryFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        handler.postDelayed(runnable, 3000)
+        handler.postDelayed(runnable, TIME_IN_MILLIS_TRANSITION.toLong())
     }
 
     private val runnable = Runnable {
