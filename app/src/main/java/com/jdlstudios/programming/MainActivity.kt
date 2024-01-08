@@ -2,8 +2,6 @@ package com.jdlstudios.programming
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.jdlstudios.programming.databinding.ActivityMainBinding
 import com.jdlstudios.programming.ui.views.HomeFragment
@@ -19,11 +17,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(window.decorView) { _, insets ->
-            insets.isVisible(WindowInsetsCompat.Type.ime())
-            insets
-        }
-
         binding.buttonNavigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.button_home -> makeCurrentFragment(HomeFragment())
@@ -33,7 +26,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
     }
 
     private fun makeCurrentFragment(fragment: Fragment) {

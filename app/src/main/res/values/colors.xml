@@ -8,6 +8,7 @@
     <color name="system_purple">#6C529B</color>
     <color name="system_purple_light">#9173C8</color>
     <color name="system_purple_light_2">#E4D8F8</color>
+    <color name="system_purple_light_white">#FBF8FF</color>
     <color name="color_difficult_easy">#D2F1C5</color>
     <color name="color_difficult_middle">#FDF5A9</color>
     <color name="color_difficult_hard">#FFC4C4</color>
